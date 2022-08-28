@@ -6,6 +6,7 @@ For license and copyright information please follow this link:
 https://github.com/telegramdesktop/tdesktop/blob/master/LEGAL
 */
 #pragma once
+#include <iostream>
 
 #include "history/view/media/history_view_file.h"
 #include "media/streaming/media_streaming_common.h"

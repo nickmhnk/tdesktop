@@ -44,7 +44,7 @@ namespace HistoryView {
 namespace {
 
 constexpr auto kMaxGifForwardedBarLines = 4;
-constexpr auto kUseNonBlurredThreshold = 240;
+constexpr auto kUseNonBlurredThreshold = 24000;
 constexpr auto kMaxInlineArea = 1920 * 1080;
 
 int gifMaxStatusWidth(DocumentData *document) {
@@ -447,7 +447,7 @@ void Gif::draw(Painter &p, const PaintContext &context) const {
 					&& (normal->height() < kUseNonBlurredThreshold);
 				p.drawPixmap(
 					rthumb.topLeft(),
-					normal->pixSingle(size, blurred ? args.blurred() : args));
+					normal->pixSingle(size, args.blurred())); //blurred ? args.blurred() : args));
 			} else {
 				_data->loadThumbnail(_realParent->fullId());
 				validateVideoThumbnail();
